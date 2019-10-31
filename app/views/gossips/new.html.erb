@@ -1,0 +1,19 @@
+<% content_for :title, "New gossip" %>
+
+<div class='container-fluid'>
+  <hr/>
+
+  <%= render 'alert'%>
+
+  <div class='container-fluid'>
+    <h1 class='text-success'>Gimme dat gossip</h1>
+    <h2 class='text-success'>Fillout the form. Please. Oh come on, do it. Now.</h2>
+  </div>
+
+  <hr/>
+  <%= render 'form' %>
+  <hr/>
+
+  <%= link_to 'Back to index', gossips_path, :class => 'btn btn-info ' %>
+  <hr/>
+</div>

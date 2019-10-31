@@ -1,0 +1,31 @@
+<% content_for :title, "City of " + @city.name %>
+
+<div class='container-fluid'>
+  <hr/>
+  
+  <div class='container-fluid'>
+    <h3 class='text-primary'>Name : <%= @city.name %></h3>
+    <h5 class='text-secondary'>Zipcode : <%= @city.zipcode %></h4>
+  </div>
+  <hr/>
+    
+    <h4 class='text-primary'>They live here :</h4>
+    <p><% @city.users.each do |user| %>
+        <%= link_to user.first_name + ' ' + user.last_name, user_path(user), :class => 'btn btn-outline-warning'%>
+      <% end %>
+    </p>
+
+    <hr/>
+
+    <h4 class='text-primary'>Gossips written here :</h4>
+    <p><% @city.users.each do |user| %>
+      <% user.gossips.each do |gossip| %>
+        <%= link_to gossip.title, gossip_path(gossip), :class => 'btn btn-outline-info'%>
+      <% end %>
+    <% end %></p>
+  </div>
+
+  <hr/>
+  <%= link_to 'Back to index', gossips_path, :class => 'btn btn-info ' %>
+  <hr/>
+</div>

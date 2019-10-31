@@ -1,0 +1,66 @@
+<% content_for :title, "Details of " + @gossip.title %>
+
+
+<div class='container-fluid'>
+  <hr/>
+  <% if notice %>
+    <div class="alert alert-success" role="alert">
+      <%= notice %>
+    </div>
+    <hr/>
+  <% end %>
+  
+  <div class='container-fluid'>
+    <h1 class='text-center text-primary'><%= @gossip.title %></h1>
+    <h3 class='text-center text-secondary'>Gossip n°<%= @gossip.id %></h3>
+  </div>
+  <hr/>
+
+  <div class='container-fluid'>
+    <h4 class='text-primary'>Written in</h4>
+    <%= link_to @gossip.user.city.name, city_path(@gossip.user.city), :class => 'btn btn-sm btn-outline-secondary' %>
+    <hr/>
+
+    <h4 class='text-primary'>Author</h4>
+    <%= link_to @gossip.user.first_name + ' ' + @gossip.user.last_name + ' (' + @gossip.user.city.name + ')', user_path(@gossip.user), :class => 'btn btn-sm btn-outline-info'%>
+    <hr/>
+    
+    <h4 class='text-primary'>Content</h4>
+    <p><%= @gossip.content %></p>
+
+    <p class='text-secondary'><%= @gossip.created_at.strftime("Created on %-d %B %Y at %Hh %Mm %Ss (UTC)") %></p>
+
+
+
+  </div>
+  <hr/>  
+  <%= link_to 'Edit gossip', edit_gossip_path(@gossip), :class => 'btn btn-warning' %>
+  <%= link_to 'Delete gossip', @gossip, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %>
+  
+  <hr/>
+  <div class='container-fluid pl-5'>
+  <h5 class='text-primary'>Comments</h5>
+  
+
+  <% @gossip.comments.each do |comment| %>
+    <blockquote class="blockquote w-50">
+    <hr/>
+      <p class="mb-0 h6"><%= comment.content %></p>
+      <footer class="blockquote-footer mb-2">by 
+      <%= link_to comment.user.first_name + ' ' + comment.user.last_name,
+        user_path(comment.user),
+        :class => 'btn btn-sm btn-outline-secondary' %> - <%= comment.updated_at.strftime("%-d %B %Y at %Hh %Mm %Ss (UTC)") %>
+      </footer>
+      <hr/>
+      <p><%= link_to 'Edit comment', edit_comment_path(comment),
+        :class => 'btn btn-sm btn-outline-warning' %>
+      <%= link_to 'Delete comment', comment, method: :delete, data: { confirm: 'Are you sure?' }, 
+        :class => 'btn btn-sm btn-outline-danger' %></p>
+    </blockquote>
+  <% end %>
+  </div>
+
+  <hr/>
+  <%= link_to 'Back to index', gossips_path, :class => 'btn btn-info ' %>
+  <hr/>
+</div>

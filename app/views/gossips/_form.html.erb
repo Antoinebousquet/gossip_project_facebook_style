@@ -1,0 +1,38 @@
+
+  <div class='container-fluid'>
+    <%= form_with(model: @gossip, local: true) do |form| %>
+      
+      <% if  @gossip.errors.include?('title') %>
+        <div class="alert alert-danger" role="alert">
+        <% @gossip.errors.full_messages.each do |message| %>
+          <p><%= message if message.include?('Title') %></p>
+        <% end %>
+        <p><%= form.text_field :title, class: 'w-25 mb-3 form-control' %></p>
+        </div>
+        <% else %>
+          <h4 class='text-primary'>Title</h4>
+          <p><%= form.text_field :title, class: 'w-25 mb-3 form-control' %></p>
+      <% end %>
+
+      <hr/>
+
+      <% if  @gossip.errors.include?('content') %>
+        <div class="alert alert-danger" role="alert">
+          <% @gossip.errors.full_messages.each do |message| %>
+            <p><%= message if message.include?('Content') %></p>
+          <% end %>
+          <p><%= form.text_area :content, rows: 10, class: 'w-50 mb-3 form-control' %></p>
+        </div>
+      <% else %>
+        <h4 class='text-primary'>Content</h4>
+        <p><%= form.text_area :content, rows: 10, class: 'w-50 mb-3 form-control' %></p>
+      <% end %>
+
+      <%= form.hidden_field :user_id, :value => User.first.id %>
+      
+      <hr/>
+      <div class="actions">
+        <%= form.submit "Create the gossip", class: 'btn btn-lg btn-success' %>
+      </div>
+    <% end %>
+  </div>
