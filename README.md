@@ -1,32 +1,19 @@
-# THE GOSSIP PROJECT : PIMP-ON !
+# THE GOSSIP PROJECT : Facebook like
 
 ## The Hacking Project - Bootcamp Fullstack Web
 ### Semaine 6, jour 4.
-
-> 
-
-
-This app is a simplified blogging mockup.
-
-
-***
-
-## Fonctionnalités présentes
-
-This list will be updated later. App is getting build.
 
 ***
 
 ## Installation
 Cloner le repository : 
 ~~~bash
-$ git clone https://github.com/gaael/thp-06-04-gossip-project-v4.git
+$ git clone https://github.com/Antoinebousquet/gossip_project_facebook_style
 ~~~
 Ou télécharger sa version compressée puis l'extraire.
 
-Se placer dans le dossier `thp-06-04-gossip-project-v4-master`. Installer les gemmes nécessaires (via *Bundler*)
+Installer les gemmes nécessaires (via *Bundler*)
 ~~~bash
-$ cd path/to/thp-06-04-gossip-project-v4-master
 $ bundle install
 ~~~
 
@@ -83,27 +70,12 @@ group :added_gems do
   gem 'table_print'
 end
 ~~~
-
-
-***
-
-## Testing
-
-None yet.
-
-***
-
-## Historique des versions
-
-* version 4.00 : repo init
-
 ***
 
 ## Credits
 Les ressources de [The Hacking Project](https://www.thehackingproject.org/)\
 Les [guides de Rails](https://guides.rubyonrails.org/index.html)
-
+Gaël Dubois - [Twitter](https://twitter.com/GalDUBOIS1) - [GitHub](https://github.com/gaael/)\
 
 ## Meta
-Gaël Dubois - [Twitter](https://twitter.com/GalDUBOIS1) - [GitHub](https://github.com/gaael/)\
 Distribué sous license GNU-GPLv3. Voir `LICENCE.txt` pour plus d'informations.
