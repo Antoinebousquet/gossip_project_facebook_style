@@ -77,7 +77,7 @@ end
 ## Credits
 Les ressources de [The Hacking Project](https://www.thehackingproject.org/)\
 Les [guides de Rails](https://guides.rubyonrails.org/index.html)\
-Gaël Dubois - [Twitter](https://twitter.com/GalDUBOIS1) - [GitHub](https://github.com/gaael/)\
+Gaël Dubois - [GitHub](https://github.com/gaael/)
 
 ## Meta
 Distribué sous license GNU-GPLv3. Voir `LICENCE.txt` pour plus d'informations.
