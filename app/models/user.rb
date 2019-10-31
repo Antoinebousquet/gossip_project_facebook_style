@@ -5,6 +5,9 @@ class User < ApplicationRecord
   # 1 - N association with gossips table
   has_many :gossips
 
-  #1 - N association with comments table
+  # 1 - N association with comments table
   has_many :comments
+
+  # The bcrypt gem will hash the
+  has_secure_password
 end

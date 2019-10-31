@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-  # # GET /users
-  # def index
-  #   @users = User.all
-  # end
+  # GET /users
+  def index
+    @users = User.all
+  end
 
   # GET /users/id
   def show
@@ -17,12 +17,15 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    @user = User.new(user_params)
+    @user = User.new(
+    'first_name' => params[:first_name],
+    'password' => params[:password],
+    'city_id' => params[:city_id])
 
     if @user.save
-      format.html { redirect_to @user, notice: 'User was successfully created.' }
+      redirect_to gossips_path, notice: 'User was successfully created.'
     else
-      format.html { render :new }
+      render 'new'
     end
   end
 
@@ -61,6 +64,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.fetch(:user, {})
+      params.require(:user).permit(:first_name, :password, :city_id)
     end
 end

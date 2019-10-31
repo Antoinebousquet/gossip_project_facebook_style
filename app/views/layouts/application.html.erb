@@ -14,6 +14,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
@@ -36,6 +37,14 @@
             <%= link_to 'Contact', contact_path, :class => 'nav-link' %>
           </li>
         </ul>
+        <span class="navbar-item">
+          <p class="nav-item">
+            <%= link_to 'Sign up', new_user_path, :class => 'btn btn-primary btn-md', data: { turbolinks: false } %>
+          </p>
+          <p class="nav-item">
+            <%= link_to 'Sign in', new_user_path, :class => 'btn "btn btn-info', data: { turbolinks: false } %>
+          </p>
+        </span>
       </div>
     </nav>
     

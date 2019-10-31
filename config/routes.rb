@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   resources :cities, only: [:show]
   resources :comments
   resources :gossips
-  resources :users, only: [:show]
+  resources :users
 end

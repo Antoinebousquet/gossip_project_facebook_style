@@ -69,7 +69,7 @@ group :added_gems do
   # Displays nice tables in Rails Console
   gem 'table_print'
   # Use this gem to keep your users' passwords secure.
-	gem 'bcrypt'
+  gem 'bcrypt'
 end
 ~~~
 ***
